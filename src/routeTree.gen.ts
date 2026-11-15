@@ -12,12 +12,21 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AppRouteRouteImport } from './routes/app/route'
 import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as AppAcademicsRouteImport } from './routes/app/academics'
+import { Route as AppAssignmentsRouteImport } from './routes/app/assignments'
+import { Route as AppExamsRouteImport } from './routes/app/exams'
 import { Route as AppInstitutionRouteImport } from './routes/app/institution'
 import { Route as AppInvigilatorRouteImport } from './routes/app/invigilator'
+import { Route as AppInvitationsRouteImport } from './routes/app/invitations'
+import { Route as AppMembersRouteImport } from './routes/app/members'
+import { Route as AppOnboardingRouteImport } from './routes/app/onboarding'
+import { Route as AppQuestionBankRouteImport } from './routes/app/question-bank'
 import { Route as AppSettingsRouteImport } from './routes/app/settings'
 import { Route as AppStudentRouteImport } from './routes/app/student'
+import { Route as AppStudentsRouteImport } from './routes/app/students'
 import { Route as AppSuperAdminRouteImport } from './routes/app/super-admin'
 import { Route as AppTeacherRouteImport } from './routes/app/teacher'
+import { Route as AppTeachersRouteImport } from './routes/app/teachers'
 import { Route as AuthForgotPasswordRouteImport } from './routes/auth/forgot-password'
 import { Route as AuthLoginRouteImport } from './routes/auth/login'
 import { Route as AuthRegisterRouteImport } from './routes/auth/register'
@@ -37,6 +46,21 @@ const ResetPasswordRoute = ResetPasswordRouteImport.update({
   path: '/reset-password',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppAcademicsRoute = AppAcademicsRouteImport.update({
+  id: '/academics',
+  path: '/academics',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppAssignmentsRoute = AppAssignmentsRouteImport.update({
+  id: '/assignments',
+  path: '/assignments',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppExamsRoute = AppExamsRouteImport.update({
+  id: '/exams',
+  path: '/exams',
+  getParentRoute: () => AppRouteRoute,
+} as any)
 const AppInstitutionRoute = AppInstitutionRouteImport.update({
   id: '/institution',
   path: '/institution',
@@ -45,6 +69,26 @@ const AppInstitutionRoute = AppInstitutionRouteImport.update({
 const AppInvigilatorRoute = AppInvigilatorRouteImport.update({
   id: '/invigilator',
   path: '/invigilator',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppInvitationsRoute = AppInvitationsRouteImport.update({
+  id: '/invitations',
+  path: '/invitations',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppMembersRoute = AppMembersRouteImport.update({
+  id: '/members',
+  path: '/members',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppOnboardingRoute = AppOnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppQuestionBankRoute = AppQuestionBankRouteImport.update({
+  id: '/question-bank',
+  path: '/question-bank',
   getParentRoute: () => AppRouteRoute,
 } as any)
 const AppSettingsRoute = AppSettingsRouteImport.update({
@@ -57,6 +101,11 @@ const AppStudentRoute = AppStudentRouteImport.update({
   path: '/student',
   getParentRoute: () => AppRouteRoute,
 } as any)
+const AppStudentsRoute = AppStudentsRouteImport.update({
+  id: '/students',
+  path: '/students',
+  getParentRoute: () => AppRouteRoute,
+} as any)
 const AppSuperAdminRoute = AppSuperAdminRouteImport.update({
   id: '/super-admin',
   path: '/super-admin',
@@ -65,6 +114,11 @@ const AppSuperAdminRoute = AppSuperAdminRouteImport.update({
 const AppTeacherRoute = AppTeacherRouteImport.update({
   id: '/teacher',
   path: '/teacher',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppTeachersRoute = AppTeachersRouteImport.update({
+  id: '/teachers',
+  path: '/teachers',
   getParentRoute: () => AppRouteRoute,
 } as any)
 const AuthForgotPasswordRoute = AuthForgotPasswordRouteImport.update({
@@ -87,12 +141,21 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/app': typeof AppRouteRouteWithChildren
   '/reset-password': typeof ResetPasswordRoute
+  '/app/academics': typeof AppAcademicsRoute
+  '/app/assignments': typeof AppAssignmentsRoute
+  '/app/exams': typeof AppExamsRoute
   '/app/institution': typeof AppInstitutionRoute
   '/app/invigilator': typeof AppInvigilatorRoute
+  '/app/invitations': typeof AppInvitationsRoute
+  '/app/members': typeof AppMembersRoute
+  '/app/onboarding': typeof AppOnboardingRoute
+  '/app/question-bank': typeof AppQuestionBankRoute
   '/app/settings': typeof AppSettingsRoute
   '/app/student': typeof AppStudentRoute
+  '/app/students': typeof AppStudentsRoute
   '/app/super-admin': typeof AppSuperAdminRoute
   '/app/teacher': typeof AppTeacherRoute
+  '/app/teachers': typeof AppTeachersRoute
   '/auth/forgot-password': typeof AuthForgotPasswordRoute
   '/auth/login': typeof AuthLoginRoute
   '/auth/register': typeof AuthRegisterRoute
@@ -101,12 +164,21 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/app': typeof AppRouteRouteWithChildren
   '/reset-password': typeof ResetPasswordRoute
+  '/app/academics': typeof AppAcademicsRoute
+  '/app/assignments': typeof AppAssignmentsRoute
+  '/app/exams': typeof AppExamsRoute
   '/app/institution': typeof AppInstitutionRoute
   '/app/invigilator': typeof AppInvigilatorRoute
+  '/app/invitations': typeof AppInvitationsRoute
+  '/app/members': typeof AppMembersRoute
+  '/app/onboarding': typeof AppOnboardingRoute
+  '/app/question-bank': typeof AppQuestionBankRoute
   '/app/settings': typeof AppSettingsRoute
   '/app/student': typeof AppStudentRoute
+  '/app/students': typeof AppStudentsRoute
   '/app/super-admin': typeof AppSuperAdminRoute
   '/app/teacher': typeof AppTeacherRoute
+  '/app/teachers': typeof AppTeachersRoute
   '/auth/forgot-password': typeof AuthForgotPasswordRoute
   '/auth/login': typeof AuthLoginRoute
   '/auth/register': typeof AuthRegisterRoute
@@ -116,12 +188,21 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/app': typeof AppRouteRouteWithChildren
   '/reset-password': typeof ResetPasswordRoute
+  '/app/academics': typeof AppAcademicsRoute
+  '/app/assignments': typeof AppAssignmentsRoute
+  '/app/exams': typeof AppExamsRoute
   '/app/institution': typeof AppInstitutionRoute
   '/app/invigilator': typeof AppInvigilatorRoute
+  '/app/invitations': typeof AppInvitationsRoute
+  '/app/members': typeof AppMembersRoute
+  '/app/onboarding': typeof AppOnboardingRoute
+  '/app/question-bank': typeof AppQuestionBankRoute
   '/app/settings': typeof AppSettingsRoute
   '/app/student': typeof AppStudentRoute
+  '/app/students': typeof AppStudentsRoute
   '/app/super-admin': typeof AppSuperAdminRoute
   '/app/teacher': typeof AppTeacherRoute
+  '/app/teachers': typeof AppTeachersRoute
   '/auth/forgot-password': typeof AuthForgotPasswordRoute
   '/auth/login': typeof AuthLoginRoute
   '/auth/register': typeof AuthRegisterRoute
@@ -132,12 +213,21 @@ export interface FileRouteTypes {
     | '/'
     | '/app'
     | '/reset-password'
+    | '/app/academics'
+    | '/app/assignments'
+    | '/app/exams'
     | '/app/institution'
     | '/app/invigilator'
+    | '/app/invitations'
+    | '/app/members'
+    | '/app/onboarding'
+    | '/app/question-bank'
     | '/app/settings'
     | '/app/student'
+    | '/app/students'
     | '/app/super-admin'
     | '/app/teacher'
+    | '/app/teachers'
     | '/auth/forgot-password'
     | '/auth/login'
     | '/auth/register'
@@ -146,12 +236,21 @@ export interface FileRouteTypes {
     | '/'
     | '/app'
     | '/reset-password'
+    | '/app/academics'
+    | '/app/assignments'
+    | '/app/exams'
     | '/app/institution'
     | '/app/invigilator'
+    | '/app/invitations'
+    | '/app/members'
+    | '/app/onboarding'
+    | '/app/question-bank'
     | '/app/settings'
     | '/app/student'
+    | '/app/students'
     | '/app/super-admin'
     | '/app/teacher'
+    | '/app/teachers'
     | '/auth/forgot-password'
     | '/auth/login'
     | '/auth/register'
@@ -160,12 +259,21 @@ export interface FileRouteTypes {
     | '/'
     | '/app'
     | '/reset-password'
+    | '/app/academics'
+    | '/app/assignments'
+    | '/app/exams'
     | '/app/institution'
     | '/app/invigilator'
+    | '/app/invitations'
+    | '/app/members'
+    | '/app/onboarding'
+    | '/app/question-bank'
     | '/app/settings'
     | '/app/student'
+    | '/app/students'
     | '/app/super-admin'
     | '/app/teacher'
+    | '/app/teachers'
     | '/auth/forgot-password'
     | '/auth/login'
     | '/auth/register'
@@ -203,6 +311,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResetPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/academics': {
+      id: '/app/academics'
+      path: '/academics'
+      fullPath: '/app/academics'
+      preLoaderRoute: typeof AppAcademicsRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/app/assignments': {
+      id: '/app/assignments'
+      path: '/assignments'
+      fullPath: '/app/assignments'
+      preLoaderRoute: typeof AppAssignmentsRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/app/exams': {
+      id: '/app/exams'
+      path: '/exams'
+      fullPath: '/app/exams'
+      preLoaderRoute: typeof AppExamsRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
     '/app/institution': {
       id: '/app/institution'
       path: '/institution'
@@ -215,6 +344,34 @@ declare module '@tanstack/react-router' {
       path: '/invigilator'
       fullPath: '/app/invigilator'
       preLoaderRoute: typeof AppInvigilatorRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/app/invitations': {
+      id: '/app/invitations'
+      path: '/invitations'
+      fullPath: '/app/invitations'
+      preLoaderRoute: typeof AppInvitationsRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/app/members': {
+      id: '/app/members'
+      path: '/members'
+      fullPath: '/app/members'
+      preLoaderRoute: typeof AppMembersRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/app/onboarding': {
+      id: '/app/onboarding'
+      path: '/onboarding'
+      fullPath: '/app/onboarding'
+      preLoaderRoute: typeof AppOnboardingRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/app/question-bank': {
+      id: '/app/question-bank'
+      path: '/question-bank'
+      fullPath: '/app/question-bank'
+      preLoaderRoute: typeof AppQuestionBankRouteImport
       parentRoute: typeof AppRouteRoute
     }
     '/app/settings': {
@@ -231,6 +388,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppStudentRouteImport
       parentRoute: typeof AppRouteRoute
     }
+    '/app/students': {
+      id: '/app/students'
+      path: '/students'
+      fullPath: '/app/students'
+      preLoaderRoute: typeof AppStudentsRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
     '/app/super-admin': {
       id: '/app/super-admin'
       path: '/super-admin'
@@ -243,6 +407,13 @@ declare module '@tanstack/react-router' {
       path: '/teacher'
       fullPath: '/app/teacher'
       preLoaderRoute: typeof AppTeacherRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/app/teachers': {
+      id: '/app/teachers'
+      path: '/teachers'
+      fullPath: '/app/teachers'
+      preLoaderRoute: typeof AppTeachersRouteImport
       parentRoute: typeof AppRouteRoute
     }
     '/auth/forgot-password': {
@@ -270,21 +441,39 @@ declare module '@tanstack/react-router' {
 }
 
 interface AppRouteRouteChildren {
+  AppAcademicsRoute: typeof AppAcademicsRoute
+  AppAssignmentsRoute: typeof AppAssignmentsRoute
+  AppExamsRoute: typeof AppExamsRoute
   AppInstitutionRoute: typeof AppInstitutionRoute
   AppInvigilatorRoute: typeof AppInvigilatorRoute
+  AppInvitationsRoute: typeof AppInvitationsRoute
+  AppMembersRoute: typeof AppMembersRoute
+  AppOnboardingRoute: typeof AppOnboardingRoute
+  AppQuestionBankRoute: typeof AppQuestionBankRoute
   AppSettingsRoute: typeof AppSettingsRoute
   AppStudentRoute: typeof AppStudentRoute
+  AppStudentsRoute: typeof AppStudentsRoute
   AppSuperAdminRoute: typeof AppSuperAdminRoute
   AppTeacherRoute: typeof AppTeacherRoute
+  AppTeachersRoute: typeof AppTeachersRoute
 }
 
 const AppRouteRouteChildren: AppRouteRouteChildren = {
+  AppAcademicsRoute: AppAcademicsRoute,
+  AppAssignmentsRoute: AppAssignmentsRoute,
+  AppExamsRoute: AppExamsRoute,
   AppInstitutionRoute: AppInstitutionRoute,
   AppInvigilatorRoute: AppInvigilatorRoute,
+  AppInvitationsRoute: AppInvitationsRoute,
+  AppMembersRoute: AppMembersRoute,
+  AppOnboardingRoute: AppOnboardingRoute,
+  AppQuestionBankRoute: AppQuestionBankRoute,
   AppSettingsRoute: AppSettingsRoute,
   AppStudentRoute: AppStudentRoute,
+  AppStudentsRoute: AppStudentsRoute,
   AppSuperAdminRoute: AppSuperAdminRoute,
   AppTeacherRoute: AppTeacherRoute,
+  AppTeachersRoute: AppTeachersRoute,
 }
 
 const AppRouteRouteWithChildren = AppRouteRoute._addFileChildren(

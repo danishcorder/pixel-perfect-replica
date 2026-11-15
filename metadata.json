@@ -1,0 +1,6 @@
+{
+  "name": "ExamFlow",
+  "description": "Secure online examinations, grading, and proctoring platform for institutions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
