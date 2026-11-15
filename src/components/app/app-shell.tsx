@@ -18,7 +18,7 @@ function useRole(): RoleKey {
   return ROLE_KEYS.find((k) => pathname.startsWith(ROLES[k].path)) ?? "institution";
 }
 
-function NavLink({ item, onNavigate }: { item: NavItem; onNavigate?: () => void }) {
+function NavLink({ item, onNavigate }: { item: NavItem; onNavigate?: (() => void) | undefined }) {
   const { pathname } = useLocation();
   const Icon = item.icon;
   const base = "flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors";
@@ -38,7 +38,7 @@ function NavLink({ item, onNavigate }: { item: NavItem; onNavigate?: () => void 
   );
 }
 
-function SidebarBody({ role, onNavigate }: { role: RoleKey; onNavigate?: () => void }) {
+function SidebarBody({ role, onNavigate }: { role: RoleKey; onNavigate?: (() => void) | undefined }) {
   return (
     <div className="flex h-full flex-col bg-sidebar">
       <div className="flex h-16 items-center px-5"><Brand inverted /></div>
@@ -54,7 +54,7 @@ function ProfileMenu() {
   const navigate = useNavigate();
   if (loading) return <div className="h-9 w-9 animate-pulse rounded-full bg-muted" />;
   if (!user) return <Button asChild size="sm"><Link to="/auth/login"><LogIn className="h-4 w-4" />Sign in</Link></Button>;
-  const name = (user.user_metadata?.full_name as string | undefined) ?? user.email ?? "Account";
+  const name = (user.user_metadata?.["full_name"] as string | undefined) ?? user.email ?? "Account";
   const initials = name.split(/[\s@]/).filter(Boolean).slice(0, 2).map((s) => s[0]?.toUpperCase()).join("");
   return (
     <DropdownMenu>

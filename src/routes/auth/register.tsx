@@ -56,11 +56,11 @@ function Register() {
     <AuthCard title="Create your account" description="Set up ExamFlow for your institution." footer={<>Already registered? <Link to="/auth/login" className="font-medium text-primary hover:underline">Sign in</Link></>}>
       <form onSubmit={onSubmit} className="space-y-4" noValidate>
         {error && <ErrorState title="Couldn't create account" description={error} />}
-        <div><Label htmlFor="fullName">Full name</Label><Input id="fullName" name="fullName" autoComplete="name" className="mt-1.5" /><FieldError msg={errors.fullName} /></div>
-        <div><Label htmlFor="institution">Institution name</Label><Input id="institution" name="institution" className="mt-1.5" /><FieldError msg={errors.institution} /></div>
-        <div><Label htmlFor="email">Work email</Label><Input id="email" name="email" type="email" autoComplete="email" className="mt-1.5" /><FieldError msg={errors.email} /></div>
-        <div><Label htmlFor="password">Password</Label><Input id="password" name="password" type="password" autoComplete="new-password" className="mt-1.5" /><FieldError msg={errors.password} /></div>
-        <div><label className="flex items-start gap-2 text-sm"><Checkbox name="terms" className="mt-0.5" /> I agree to the terms of service and privacy policy.</label><FieldError msg={errors.terms} /></div>
+        <div><Label htmlFor="fullName">Full name</Label><Input id="fullName" name="fullName" autoComplete="name" className="mt-1.5" /><FieldError msg={errors["fullName"]} /></div>
+        <div><Label htmlFor="institution">Institution name</Label><Input id="institution" name="institution" className="mt-1.5" /><FieldError msg={errors["institution"]} /></div>
+        <div><Label htmlFor="email">Work email</Label><Input id="email" name="email" type="email" autoComplete="email" className="mt-1.5" /><FieldError msg={errors["email"]} /></div>
+        <div><Label htmlFor="password">Password</Label><Input id="password" name="password" type="password" autoComplete="new-password" className="mt-1.5" /><FieldError msg={errors["password"]} /></div>
+        <div><label className="flex items-start gap-2 text-sm"><Checkbox name="terms" className="mt-0.5" /> I agree to the terms of service and privacy policy.</label><FieldError msg={errors["terms"]} /></div>
         <Button type="submit" className="w-full" disabled={busy}>{busy && <Loader2 className="h-4 w-4 animate-spin" />}Create account</Button>
       </form>
     </AuthCard>
